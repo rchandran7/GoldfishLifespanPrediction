@@ -1,5 +1,6 @@
 import sys
 import pandas as pd
+import numpy as np
 
 if len(sys.argv) == 3:
     file_input = sys.argv[1]
@@ -8,4 +9,4 @@ else:
     print("Error: Invalid number of arguments.", file=sys.stderr)
 
 df = pd.read_csv(file_input)
-df.drop(['id'], axis=1)
+df.drop(['id', 'color'], axis=1)
