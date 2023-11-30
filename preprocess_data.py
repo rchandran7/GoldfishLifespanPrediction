@@ -20,10 +20,8 @@ else:
 df = pd.read_csv(file_input)
 df = df.drop(['id', 'color'], axis=1)
 df = df.dropna()
-
-
 df = dummy_variable_col(df, 'habitat')
-
 df['Gender'] = df['Gender'].replace({True: 'male', False: 'female'})
+
 
 df.to_csv(file_output + '_train.csv', index=False)
